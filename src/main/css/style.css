@@ -6,7 +6,7 @@
     border-bottom:1px solid gray;
 }
 #body{
-    height:100%;
+    height:100vh;
     width:1024px;
     margin:0 auto;
 }
@@ -62,3 +62,7 @@
 }
 .product-seller{display:flex; align-items:center;margin-top:12px;}
 .product-avatar{width:24px;}
+.product-link{
+    color:#333;
+    text-decoration: none;
+}
