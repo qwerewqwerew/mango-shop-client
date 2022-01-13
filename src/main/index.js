@@ -29,19 +29,19 @@ function MainPage() {
 				</div>
 				<h1>Products</h1>
 				<div id="product-list">
-					{products.map(function (products, index) {
+					{products.map(function (product, index) {
 						return (
 							<div className="product-card">
-								<Link className="product-link" to={`/product/${index}`}>
+								<Link className="product-link" to={`/products/${product.id}`}>
 									<div>
-										<img className="product-img" src={products.imageUrl} />
+										<img className="product-img" src={product.imageUrl} />
 									</div>
 									<div className="product-contents">
-										<span className="product-name">{products.name}</span>
-										<span className="product-price">{products.price}</span>
+										<span className="product-name">{product.name}</span>
+										<span className="product-price">{product.price}</span>
 										<div className="product-seller">
 											<img className="product-avatar" src="images/icons/avatar.png" />
-											<span>{products.seller}</span>
+											<span>{product.seller}</span>
 										</div>
 									</div>{/* .product-contents */}
 								</Link>
