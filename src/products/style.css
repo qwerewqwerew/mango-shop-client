@@ -1,11 +1,13 @@
 #image-box{
-    height:300px;
+    max-height:300px;
+    max-width:100%;
+    width: 100%;
     display:flex;
     align-items: center;
     justify-content: center;
 }
 #image-box>img{
-    height:100%
+    max-width:300px;
 }
 #profile-box{
     padding:16px;
@@ -40,4 +42,9 @@
 }
 #description{
     margin-top: 16px;
+    font-size: 1em;
+    line-height: 1.7;
+}
+.purchase{
+    margin:16px 8px 16px 0px;
 }

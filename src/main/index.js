@@ -1,12 +1,11 @@
 import React from "react";
 import "./css/style.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import {API_URL} from '../config/constants.js'
-import {Carousel} from "antd"
-
+import {API_URL} from "../config/constants.js";
+import {Carousel} from "antd";
 
 dayjs.extend(relativeTime);
 
@@ -40,7 +39,7 @@ function MainPage() {
 					return (
 						<Link to={banner.href}>
 							<div id="banner">
-								<img src={`${API_URL}/${banner.imageUrl}`} alt=""/>
+								<img src={`${API_URL}/${banner.imageUrl}`} alt="" />
 							</div>
 						</Link>
 					);
@@ -51,16 +50,17 @@ function MainPage() {
 				{products.map(function (product, index) {
 					return (
 						<div className="product-card">
+							{product.soldout === 1 ? <div className="product-blur"></div> : null}
 							<Link className="product-link" to={`/products/${product.id}`}>
 								<div>
-									<img className="product-img" src={`${API_URL}/${product.imageUrl}`} alt="" />
+									<img className="product-img" src={`${API_URL}/${product.imageUrl}`} alt={`${product.name}`} />
 								</div>
 								<div className="product-contents">
 									<span className="product-name">{product.name}</span>
 									<span className="product-price">{product.price}</span>
-									<div class="product-footer">
+									<div className="product-footer">
 										<div className="product-seller">
-											<img className="product-avatar" src="images/icons/avatar.png" alt=""/>
+											<img className="product-avatar" src="images/icons/avatar.png" alt={`${product.seller}`} />
 											<span>{product.seller}</span>
 										</div>
 										<span className="product-date">{dayjs(product.createdAt).fromNow()}</span>
